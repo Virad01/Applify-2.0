@@ -17,7 +17,7 @@ body {
   left: -55px;
   width: 50%; /* Set the width of the image on the left */
   height: 100%;
-  background: url('download.png') no-repeat; /* Replace 'your-image.png' with your image path */
+  background: url('download.png') no-repeat;
   background-size: cover;
   filter: brightness(0.5); /* Adjust brightness if needed */
   z-index: 3px;
@@ -33,11 +33,11 @@ body {
 
 h1 {
   color: #000000;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family:DIN-Next;
   font-weight:bolder;
   
 }
-
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -66,6 +66,7 @@ h1 {
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  
 }
 
 .slider:before {
@@ -139,7 +140,7 @@ h1 {
   color: #ffffff;
   border: none;
   padding: 10px 20px;
- 
+  font-family:DIN-Next;
   cursor: pointer;
   border-radius: 5px;
  margin-left: -6%;
@@ -154,7 +155,7 @@ h1 {
   color: #ffffff; /* White text color */
   border: none;
   padding: 12px 15px;
-
+  font-family:DIN-Next;
   cursor: pointer;
   position: relative;
   border-radius: 5px;
@@ -170,3 +171,10 @@ h1 {
   height: auto;
   margin-left: 5px; /* Add some spacing between text and icon */
 }
+
+@font-face {
+  font-family: 'DIN-Next';
+  font-style: normal;
+  font-weight: 900;
+  src: url('Fonts/DINNextW1G-Regular.otf'); 
+ }
