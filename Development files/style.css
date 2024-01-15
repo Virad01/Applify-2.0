@@ -10,13 +10,16 @@ body {
 }
 
 .container {
-  text-align: center;
-  width: 300px;
-  height: 200px;
+  text-align:center;
+  width: 430px;
+  height: 225px;
 }
 
 h1 {
-  color: #333;
+  color: #000000;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight:bolder;
+  
 }
 
 /* The switch - the box around the slider */
@@ -25,6 +28,8 @@ h1 {
   display: inline-block;
   width: 60px;
   height: 34px;
+  top: -90px;
+  left: 260px;
 }
 
 /* Hide default HTML checkbox */
@@ -54,17 +59,17 @@ h1 {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: rgb(232, 233, 234);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #14A44D;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #14A44D;
 }
 
 input:checked + .slider:before {
@@ -75,9 +80,96 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 50px;
+  border-radius: 40px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* 
+text animation */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+.neonText {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #6558f5,
+    0 0 82px 6558f5, 0 0 92px #6558f5, 0 0 102px #6558f5, 0 0 151px #6558f5;
+  animation: flicker 0.3s infinite;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'Abril Fatface';
+  background-color: #010a01;
+}
+
+h1 {
+  text-align: left;
+  font-weight: 300;
+  margin-left: 20%;
+  
+}
+
+h1 {
+  font-size: 2.0rem;
+}
+
+.cont {
+  margin-top: 20vh;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #6558f5,
+      0 0 80px #6558f5, 0 0 90px #6558f5, 0 0 100px #6558f5, 0 0 150px #6558f5;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+
+#exitButton {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+ 
+  cursor: pointer;
+  border-radius: 5px;
+ margin-left: -6%;
+  margin-top: 30px;
+  
+  
+  
+}
+
+#redirectButton {
+  background-color: #007BFF; /* Blue background color */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 12px 15px;
+
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  margin-left: 18%;
+
+ 
+  
+  
+}
+
+.icon {
+  width: 12px; /* Adjust the width of the icon as needed */
+  height: auto;
+  margin-left: 5px; /* Add some spacing between text and icon */
 }
