@@ -17,11 +17,7 @@ body {
   left: -55px;
   width: 50%; /* Set the width of the image on the left */
   height: 100%;
-<<<<<<< HEAD
   background: url('Images/download.png') no-repeat; /* Replace 'your-image.png' with your image path */
-=======
-  background: url('download.png') no-repeat;
->>>>>>> df0ee41038f4c1a508275e9e9018d5577ffcbfcc
   background-size: cover;
   filter: brightness(0.5); /* Adjust brightness if needed */
   z-index: 3px;
