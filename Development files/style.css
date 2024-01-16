@@ -44,8 +44,8 @@ h1 {
   display: inline-block;
   width: 43px;
   height: 24px;
-  top: -80px;
-  left: 250px;
+  top: -84px;
+  left: 271px;
 }
 
 /* Hide default HTML checkbox */
@@ -143,7 +143,7 @@ h1 {
   font-family:DIN-Next;
   cursor: pointer;
   border-radius: 5px;
- margin-left: -6%;
+ margin-left: -3%;
   margin-top: 30px;
   
   
@@ -175,6 +175,6 @@ h1 {
 @font-face {
   font-family: 'DIN-Next';
   font-style: normal;
-  font-weight: 900;
-  src: url('Fonts/DINNextW1G-Regular.otf'); 
+  font-weight: 1000;
+  src: url('Fonts/DINNextW1G-Bold.otf'); 
  }
