@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   redirectButton.addEventListener('click', function () {
     // Handle the redirect button click
-    chrome.tabs.create({ url: 'https://www.example.com/myapplications' });
+    chrome.tabs.create({ url: 'Application Page/index.html' });
   });
 
   // Initialize toggle switch state

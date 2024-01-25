@@ -18,6 +18,12 @@
     "default_title": "Application Tracker",
     "default_popup": "popup.html"
   },
+
+  "background": {
+    "scripts": ["storagee.js"],
+    "persistent": false
+  },
+  
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
