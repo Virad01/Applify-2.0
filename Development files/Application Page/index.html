@@ -137,6 +137,7 @@
         <p>Apply & Track</p>
       </header>
       <main>
+        <div class="split left">
         <nav>
           <a onclick="showTable()">My Applications</a> 
           <a onclick="showSummaryAndInsights()">Summary and Insights</a>
@@ -147,6 +148,7 @@
           
          
         </nav>
+      </div>
       
         <div id="summaryInsights">
           <!-- Content for Summary and Insights -->
@@ -155,7 +157,7 @@
           <button onclick="showTable()">My Applications</button>
         </div>
       
-        <table-container>
+        <!-- <table-container>
           <table id="dataTable">
             <thead>
               <tr>
@@ -169,27 +171,41 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Table rows will be added dynamically using JavaScript -->
+              
             </tbody>
           </table>
-        </table-container>
+        </table-container> -->
       </main>
       
       
-      
+      <div class="split right">
 
         <script>
+        
 
 function showTable() {
-   // Show the table
-   document.getElementById('dataTable').style.display = 'block';
-
-// Hide the summary and insights
-document.getElementById('summaryInsights').style.display = 'none';
-
-// Hide the terms and conditions
-document.getElementById('termsConditions').style.display = 'none';
+    // Show the table
+    document.getElementById('contentContainer').innerHTML = '';
+    document.getElementById('tableContainer').innerHTML = `
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Company Name</th>
+            <th>Job Profile</th>
+            <th>Applied On</th>
+            <th>Application URL</th>
+            <th>Status</th>
+            <th>Contact Info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows will be added dynamically using JavaScript -->
+        </tbody>
+      </table>
+    `;
   }
+
 
 
 
@@ -278,24 +294,13 @@ function showSummaryAndInsights() {
 
 
   function showTermsOfUse() {
-    // Hide the table
-    document.getElementById('dataTable').style.display = 'none';
-
-    // Hide the summary and insights
-    document.getElementById('summaryInsights').style.display = 'none';
-
-   
-    // Show the terms and conditions
-    document.getElementById('contentContainer').innerHTML = `
+    // Show the terms and conditions inside the tableContainer
+    document.getElementById('tableContainer').innerHTML = `
       <h2>Terms and Conditions</h2>
       <p>This is a sample text. Replace it with your actual terms and conditions content.</p>
       <p>More terms and conditions...</p>
-      <button onclick="showTable()">Back to My Applications</button>
+      
     `;
-    document.getElementById('dataTable').style.display = 'none';
-
-    
-    
   }
 
   // function showTable() {
@@ -313,13 +318,13 @@ function showSummaryAndInsights() {
   //   data.forEach(entry => {
   //     const row = document.createElement('tr');
   //     row.innerHTML = `
-  //       <td>${entry.sno}</td>
-  //       <td>${entry.companyName}</td>
-  //       <td>${entry.jobProfile}</td>
-  //       <td>${entry.appliedOn}</td>
-  //       <td>${entry.applicationURL}</td>
-  //       <td>${entry.status}</td>
-  //       <td>${entry.contactInfo}</td>
+  //       <td>&#8377{entry.sno}</td>
+  //       <td>&#8377{entry.companyName}</td>
+  //       <td>&#8377{entry.jobProfile}</td>
+  //       <td>&#8377{entry.appliedOn}</td>
+  //       <td>&#8377{entry.applicationURL}</td>
+  //       <td>&#8377{entry.status}</td>
+  //       <td>&#8377{entry.contactInfo}</td>
   //     `;
   //     tableBody.appendChild(row);
   //   });
@@ -336,13 +341,13 @@ function showSummaryAndInsights() {
   //           data.forEach(entry => {
   //             const row = document.createElement('tr');
   //             row.innerHTML = `
-  //               <td>${entry.sno}</td>
-  //               <td>${entry.companyName}</td>
-  //               <td>${entry.jobProfile}</td>
-  //               <td>${entry.appliedOn}</td>
-  //               <td>${entry.applicationURL}</td>
-  //               <td>${entry.status}</td>
-  //               <td>${entry.contactInfo}</td>
+  //               <td>&#8377{entry.sno}</td>
+  //               <td>&#8377{entry.companyName}</td>
+  //               <td>&#8377{entry.jobProfile}</td>
+  //               <td>&#8377{entry.appliedOn}</td>
+  //               <td>&#8377{entry.applicationURL}</td>
+  //               <td>&#8377{entry.status}</td>
+  //               <td>&#8377{entry.contactInfo}</td>
   //             `;
   //             tableBody.appendChild(row);
   //           });
@@ -370,7 +375,7 @@ function showSummaryAndInsights() {
   //   alert('Show Terms of Use functionality goes here.');
   // }
           </script>
-      </table>
+      
       <div>
         <div id="summaryInsights">
           <!-- Content for Summary and Insights -->
@@ -383,9 +388,15 @@ function showSummaryAndInsights() {
 
       </div>
       
+      <div id="contentContainer">
+        <!-- Content for Table, Summary and Insights, or Terms and Conditions will be dynamically updated here -->
+      </div>
+      
+      <!-- Add the table container -->
+      <div id="tableContainer"></div>
       
       
-      
+
 
       <div class="home-container">
         <div class="home-header"></div>
@@ -530,7 +541,7 @@ function showSummaryAndInsights() {
                 </div>
                 <div class="home-container06">
                   <span class="home-text23">
-                    <span>$</span>
+                    <span>&#8377</span>
                     <span></span>
                   </span>
                   <span class="home-free-plan-price">0</span>
@@ -570,7 +581,7 @@ function showSummaryAndInsights() {
                 </div>
                 <div class="home-container13">
                   <span class="home-text31">
-                    <span>$</span>
+                    <span>&#8377</span>
                     <span></span>
                   </span>
                   <span class="home-basic-plan-pricing">9.99</span>
@@ -618,7 +629,7 @@ function showSummaryAndInsights() {
                 </div>
                 <div class="home-container21">
                   <span class="home-text44">
-                    <span>$</span>
+                    <span>&#8377</span>
                     <span></span>
                   </span>
                   <span class="home-pro-plan-pricing">19.99</span>
@@ -759,6 +770,7 @@ function showSummaryAndInsights() {
         <div class="home-footer"></div>
       </div>
     </div>
+  </div>
     <script
       data-section-id="navbar"
       src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
