@@ -50,13 +50,11 @@ function updatePageWithData() {
   });
 }
 
-// Call fetchData when the extension is loaded or at a specific trigger point
 fetchData();
 
-// Set up a listener for changes in Chrome storage
 chrome.storage.onChanged.addListener(function (changes, namespace) {
   if ('jobApplications' in changes) {
-    // Update the HTML page when the storage changes
+ 
     updatePageWithData();
   }
 });

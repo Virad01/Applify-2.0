@@ -303,77 +303,7 @@ function showSummaryAndInsights() {
     `;
   }
 
-  // function showTable() {
-  //   // Show the table
-  //   document.getElementById('dataTable').style.display = 'block';
-  //   // Hide the summary and insights
-  //   document.getElementById('summaryInsights').style.display = 'none';
-  // }
-
-  // Function to update the table content
-  // function updateTableContent(data) {
-  //   const tableBody = document.querySelector('dataTable');
-  //   tableBody.innerHTML = '';
-
-  //   data.forEach(entry => {
-  //     const row = document.createElement('tr');
-  //     row.innerHTML = `
-  //       <td>&#8377{entry.sno}</td>
-  //       <td>&#8377{entry.companyName}</td>
-  //       <td>&#8377{entry.jobProfile}</td>
-  //       <td>&#8377{entry.appliedOn}</td>
-  //       <td>&#8377{entry.applicationURL}</td>
-  //       <td>&#8377{entry.status}</td>
-  //       <td>&#8377{entry.contactInfo}</td>
-  //     `;
-  //     tableBody.appendChild(row);
-  //   });
-  // }
-  //         // Function to update the HTML page with the stored data
-  //         function updatePageWithData(data) {
-  //           // Get the table body
-  //           const tableBody = document.querySelector('#dataTable tbody');
-          
-  //           // Clear existing rows
-  //           tableBody.innerHTML = '';
-          
-  //           // Iterate through the data and add rows to the table
-  //           data.forEach(entry => {
-  //             const row = document.createElement('tr');
-  //             row.innerHTML = `
-  //               <td>&#8377{entry.sno}</td>
-  //               <td>&#8377{entry.companyName}</td>
-  //               <td>&#8377{entry.jobProfile}</td>
-  //               <td>&#8377{entry.appliedOn}</td>
-  //               <td>&#8377{entry.applicationURL}</td>
-  //               <td>&#8377{entry.status}</td>
-  //               <td>&#8377{entry.contactInfo}</td>
-  //             `;
-  //             tableBody.appendChild(row);
-  //           });
-  //         }
-          
-  //         // Fetch data from the background script
-  //         chrome.runtime.sendMessage({ action: 'fetchData' }, function (data) {
-  //           // Update the HTML page with the fetched data
-  //           updatePageWithData(data);
-  //         });
-
-
-  //         // Function to show "Summary and Insights"
-  // function showSummaryAndInsights() {
-  //   alert('Show Summary and Insights functionality goes here.');
-  // }
-
-  // // Function to handle "Export/Import"
-  // function exportImportData() {
-  //   alert('Export/Import functionality goes here.');
-  // }
-
-  // // Function to show "Terms of Use"
-  // function showTermsOfUse() {
-  //   alert('Show Terms of Use functionality goes here.');
-  // }
+  
           </script>
       
       <div>
@@ -391,13 +321,11 @@ function showSummaryAndInsights() {
       <div id="contentContainer">
         <!-- Content for Table, Summary and Insights, or Terms and Conditions will be dynamically updated here -->
       </div>
-      
       <!-- Add the table container -->
-      <div id="tableContainer"></div>
-      
-      
+      <div id="tableContainer">
 
-
+      </div>
+      
       <div class="home-container">
         <div class="home-header"></div>
         <div class="home-hero"></div>

@@ -724,13 +724,4 @@ th {
     padding-bottom: var(--dl-space-space-twounits);
   }
 }
-/* Example of a media query for smaller screens */
-@media screen and (max-width: 600px) {
-  nav {
-    width: 100%; /* Make the navigation bar full width on smaller screens */
-  }
 
-  table-container {
-    margin-left: 0; /* Remove the left margin on smaller screens */
-  }
-}
