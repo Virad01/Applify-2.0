@@ -2,6 +2,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "scrapeJobDetails") {
       const tabUrl = sender.tab.url;
       
+      //searches for the website name
       if (tabUrl.includes("indeed.com")) {
         fetch('http://localhost:5000/scrape', {
           method: 'POST',
