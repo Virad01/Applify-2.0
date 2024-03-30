@@ -9,7 +9,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-from flask import Flask, jsonify
+from selenium.webdriver.common.by import By
+from flask import Flask, jsonify, request
+import requests
 
 app = Flask(__name__)
 
@@ -19,7 +21,8 @@ def scrape_naukri():
     driver = webdriver.Chrome(options=options)
     driver.get("https://www.naukri.com/")
 
-    search_input = driver.find_element_by_css_selector('input.suggestor-input')
+    search_input = driver.find_element(By.CSS_SELECTOR, 'input.suggestor-input')
+    # search_input = driver.find_element(By.CSS_SELECTOR('input.suggestor-input'))
     search_input.send_keys("Machine Learning")
 
     search_button = driver.execute_script('return document.querySelector(".qsbSubmit");')
