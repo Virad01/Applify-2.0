@@ -27,7 +27,7 @@ body {
   
 }
 header {
-  background-color: #3c3fe1;
+  background-color: var(--dl-color-custom-primary1);
   color: #fff;
   padding: 15px;
   text-align: left;
@@ -70,7 +70,7 @@ table-container {
 }
 
 nav {
-  background-color: #ddd;
+  background-color: var(--dl-color-custom-neutral-light);
   padding: 10px;
   width: 120px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -100,7 +100,7 @@ nav label {
   margin-bottom: 10px;
   padding: 10px;
  
-  background-color: #ddd;
+  /* background-color: #ddd; */
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
