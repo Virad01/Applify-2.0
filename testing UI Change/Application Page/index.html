@@ -140,7 +140,7 @@
         <div class="split left">
         <nav>
           <a onclick="showTable()">My Applications</a> 
-          <a onclick="showSummaryAndInsights()">Summary and Insights</a>
+          <a href= "#" onclick="showSummaryAndInsights()">Summary and Insights</a>
           <a onclick="exportData()">Export</a>
           <label for="fileInput">Import</label>
          <input type="file" id="fileInput" onchange="importData()" accept=".csv" style="display: none;">
@@ -157,7 +157,7 @@
           <button onclick="showTable()">My Applications</button>
         </div>
       
-        <table-container>
+        <!-- <table-container>
           <table id="dataTable">
             <thead>
               <tr>
@@ -174,7 +174,7 @@
               
             </tbody>
           </table>
-        </table-container>
+        </table-container> -->
       </main>
       
       
@@ -206,20 +206,51 @@ function showTable() {
     `;
   }
 
-
-
-
+  document.addEventListener('DOMContentLoaded', function() {
+  // Attach the showSummaryAndInsights function to the click event
+  const button = document.querySelector('a.card-summary-btn');
+  if (button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      showSummaryAndInsights();
+    });
+  }
+});
 
 function showSummaryAndInsights() {
-    // Hide the table
-    document.getElementById('dataTable').style.display = 'none';
-
-    // Show the summary and insights
-    document.getElementById('summaryInsights').style.display = block;
-
-    // Hide the terms and conditions
-    document.getElementById('termsConditions').style.display = 'none';
+  // Hide the table
+  const dataTable = document.getElementById('dataTable');
+  if (dataTable) {
+    dataTable.style.display = 'none';
   }
+
+  // Show the summary and insights
+  // const summaryInsights = document.getElementById('summaryInsights');
+  // if (summaryInsights) {
+  //   summaryInsights.style.display = 'block';
+  // }
+
+  // Hide the terms and conditions
+  const termsConditions = document.getElementById('termsConditions');
+  if (termsConditions) {
+    termsConditions.style.display = 'none';
+  }
+
+  // Add summary and insights
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'summary.html', true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        const tableContainer = document.getElementById('tableContainer');
+        if (tableContainer) {
+          tableContainer.innerHTML = xhr.responseText;
+        }
+      }
+    }
+  };
+  xhr.send();
+}
 
   function exportData() {
     // Replace this with your logic to fetch and update table data
@@ -313,7 +344,7 @@ function showSummaryAndInsights() {
           <p>This is the summary and insights content.</p>
           <button onclick="showTable()">My Applications</button>
         </div>
-  
+        
         
 
       </div>

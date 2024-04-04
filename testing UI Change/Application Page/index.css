@@ -23,8 +23,7 @@ body {
 
 .right {
   right: 0;
- 
-  
+  top: auto;
 }
 header {
   background-color: var(--dl-color-custom-primary1);
@@ -99,8 +98,6 @@ nav label {
   display: block;
   margin-bottom: 10px;
   padding: 10px;
- 
-  /* background-color: #ddd; */
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -582,6 +579,8 @@ th {
   padding-right: var(--dl-space-space-threeunits);
   flex-direction: row;
   padding-bottom: var(--dl-space-space-fourunits);
+  background-color: var(--dl-color-custom-neutral-light);
+  color: var(--dl-color-custom-accent1);
 }
 .home-container28 {
   display: flex;
