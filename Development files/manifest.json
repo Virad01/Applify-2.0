@@ -3,7 +3,11 @@
   "name": "Applify",
   "version": "1.0",
   "description": "Track your applications easily!",
-  "permissions": ["storage", "tabs"],
+  "permissions": [
+    "tabs",
+    "*://*.linkedin.com/*",
+    "*://*.naukri.com/*"
+  ],
   "icons": {
     "16": "Images/icon.png",
     "48": "Images/icon.png",
@@ -20,13 +24,16 @@
   },
 
   "background": {
-    "scripts": ["storagee.js"],
+    "scripts": ["popup.js"],
     "persistent": false
   },
   
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.naukri.com/*"
+      ],
       "js": ["popup.js"]
     }
   ],
