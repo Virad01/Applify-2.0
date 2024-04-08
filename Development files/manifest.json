@@ -1,9 +1,22 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Applify",
   "version": "1.0",
   "description": "Track your applications easily!",
-  "permissions": ["storage", "tabs"],
+  "permissions": ["activeTab", "scripting"],
+   "background": {
+      "service_worker": "background.js",
+      "scripts": ["popup.js"]
+    
+    },
+
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+       
+      }
+    },
+    
   "icons": {
     "16": "Images/icon.png",
     "48": "Images/icon.png",
@@ -19,14 +32,14 @@
     "default_popup": "popup.html"
   },
 
-  "background": {
-    "scripts": ["storagee.js"],
-    "persistent": false
-  },
+  
   
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.naukri.com/*"
+      ],
       "js": ["popup.js"]
     }
   ],
@@ -34,5 +47,6 @@
     "Images/icon.png",
     "style.css",
     "Fonts/DINNextW1G-Bold.otf"
-  ]
+  ],
+  "host_permissions": ["https://xf3mnw4d-2000.inc1.devtunnels.ms/"]
 }
