@@ -5,8 +5,8 @@
   "description": "Track your applications easily!",
   "permissions": ["activeTab", "scripting"],
    "background": {
-      "service_worker": "background.js",
-      "scripts": ["popup.js"]
+      "script": "background.js"
+      
     
     },
 
@@ -43,10 +43,6 @@
       "js": ["popup.js"]
     }
   ],
-  "web_accessible_resources": [
-    "Images/icon.png",
-    "style.css",
-    "Fonts/DINNextW1G-Bold.otf"
-  ],
+  
   "host_permissions": ["https://xf3mnw4d-2000.inc1.devtunnels.ms/"]
 }
