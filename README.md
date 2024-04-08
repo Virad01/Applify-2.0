@@ -1,16 +1,16 @@
 # Applify
 
 ## Overview
-Applify is a Chrome extension designed to streamline job applications by centralizing and organizing all relevant data. It simplifies the process by providing easy access to application details and links, making it convenient for users to manage their job search effectively.
-## Chrome Extension Image
+Applify is a Chrome extension designed to streamline job applications by centralizing and organizing all relevant data. It simplifies the process by providing easy access to application details and links, making it convenient for users to manage their job tracking effectively.
+## Applify Chrome Extension
 
 ![Applify Chrome Extension](Applify.png)
 
 ## Features
 - Centralized Data: Store all job application details in one place.
 - Organized Interface: Easily access application information and related links.
-- Streamlined Workflow: Simplify the job search process for increased efficiency.
-- Customizable: Tailor the extension to suit individual preferences and needs.
+- Streamlined Workflow: Simplify the job tracking process for increased efficiency.
+
 
 ## Installation
 1. Download the Applify Chrome extension from the Chrome Web Store.
@@ -19,9 +19,9 @@ Applify is a Chrome extension designed to streamline job applications by central
 
 ## Getting Started
 1. Click on the Applify extension icon in the Chrome toolbar to open the dashboard.
-2. Add new job applications by filling out the required fields.
-3. Organize applications by status (e.g., Applied, Interview Scheduled, Offer Received).
-4. Easily access application details and related links directly from the dashboard.
+2. Add and track the application just by one click.
+3. Organize and get Insights of applications by status (e.g., Applied, Interview Scheduled, Offer Received).
+4. Easily access application details ,related information and  links directly from the dashboard.
 
 ## Technologies Used
 -Selenium / Javascript
