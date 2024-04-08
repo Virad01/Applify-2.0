@@ -101,7 +101,7 @@ def scrape_job_details():
     website = data['link']
     userID=data['uid']
     Date_app=str(datetime.datetime.now())
-    if website.startswith("https://www.linkedin.com"):
+    if website.startswith("https://www.linkedin.com/jobs"):
         job_details = scrape_LinkedIn(website, userID, Date_app)
         # return(job_details)
         collection_ref=db.collection(str(job_details["uid"]))
@@ -123,4 +123,4 @@ def scrape_job_details():
     # else:
     #     return jsonify({'error': 'Invalid website'})
 if __name__ == '__main__':
-    app.run(debug=True, port=2000)
+    app.run(debug=True, port=2000)  
