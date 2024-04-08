@@ -38,7 +38,7 @@ def scrape_LinkedIn(jobUrl, id, Date_app):
 
         company_name=driver.find_element(By.XPATH,"//div[@class='job-details-jobs-unified-top-card__primary-description-without-tagline mb2']//a[@class='app-aware-link ']")
         
-        dict={'jobTitle':job_title.text,'companyName': company_name.text, 'date':Date_app, 'uid':id}
+        dict={ 'uid':id,'jobTitle':job_title.text,'companyName': company_name.text, 'date':Date_app, 'status':'Open'}
         return(dict)
 
     elif(jobUrl.startswith("https://www.linkedin.com/jobs/view/")):
@@ -49,7 +49,7 @@ def scrape_LinkedIn(jobUrl, id, Date_app):
         # driver.quit()
         # p1=job_title.text
         # print(type(p1))
-        dict={'jobTitle':job_title.text,'companyName': company_name.text, 'date':Date_app, 'uid':id }
+        dict={ 'uid':id,'jobTitle':job_title.text,'companyName': company_name.text, 'date':Date_app, 'status':'Open'}
         return(dict)
     
 # def scrape_LinkedIn(jobUrl):
@@ -91,7 +91,7 @@ def scrape_indeed(jobUrl,id, Date_app):
 
     company_name=driver.find_element(By.XPATH,"//span[@class='css-1saizt3 e1wnkr790']")
         
-    dict={'jobTitle':job_title.text,'companyName': company_name.text, 'date':Date_app, 'uid':id }
+    dict={ 'uid':id,'jobTitle':job_title.text,'companyName': company_name.text, 'date':Date_app, 'status':'Open'}
     return(dict)
 
 
