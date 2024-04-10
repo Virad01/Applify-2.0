@@ -15,7 +15,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 # Use a service account.
-cred = credentials.Certificate('applify-9f7a9-firebase-adminsdk-xbaza-bfa99362c4.json')
+cred = credentials.Certificate('/home/vrd/Github Repositories/Applify/Current Scraping/applify-9f7a9-firebase-adminsdk-xbaza-bfa99362c4.json')
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
