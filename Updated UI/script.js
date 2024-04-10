@@ -1,29 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the "Summary and Insights" button
   const summaryBtn = document.querySelector("#summary-btn");
 
   // Attach a click event listener to the "Summary and Insights" button
   summaryBtn.addEventListener("click", async () => {
     try {
-      // Send a GET request to the "summary.html" page
       const response = await fetch("summary.html");
-
-      // Parse the HTML content of the "summary.html" page
       const html = await response.text();
-
-      // Select the "content" div where the content will be inserted
       const contentDiv = document.querySelector("#content");
-
-      // Remove the existing content of the "content" div
       contentDiv.innerHTML = "";
-
-      // Insert the HTML content of the "summary.html" page into the "content" div
       contentDiv.innerHTML = html;
-
-      // Scroll to the top of the page
       window.scrollTo(0, 0);
-
-      // Prevent the default link behavior
       return false;
     } catch (error) {
       console.error(error);
@@ -33,11 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Listen for the 'load' event on the window
   window.addEventListener("load", () => {
-    // Initialize the chart after the page and its resources are fully loaded
     initializeChart();
   });
 
-  // Select the "Export" button
+  //  "Export" button
   const exportBtns = document.querySelectorAll("nav a:last-child");
 
   // Attach a click event listener to the "Export" button

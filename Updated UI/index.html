@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link rel="stylesheet"  href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -28,23 +29,20 @@
   <main>
     <h1 style="text-align: center;">My Applications</h1>
     <div class="app-table">
-      <table style="margin: 0 auto;">
+      <table style="margin: 0 auto;" class="Table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Status</th>
+            <th>Company Name</th>
             <th>Date</th>
-            <th>Actions</th>
+            <th>Job Title</th>
+            <th>Status</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td colspan="4">No applications found</td>
-          </tr>
-        </tbody>
+        <tbody id = "tbody1"></tbody>
       </table>
     </div>
 
+    <script type= "module" src = "appTable.js"></script>
   </main>
 
   <div class="home-container">
