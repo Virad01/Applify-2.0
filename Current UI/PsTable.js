@@ -1,13 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const userEmails = ["vinayakrdikshit@gmail.com"];
-    // Function to fetch data for a single user and populate the table
+    // Function to fetch data 
     function fetchData(userEmail) {
-        fetch('https://rjtdvr2b-3000.inc1.devtunnels.ms/fetchData', {
-            // mode: 'no-cors',
+        fetch('http://localhost:3001/fetchData', {
             method: 'POST',
-            body: JSON.stringify({
-                "UserUID": userEmail
-            }),
+            body: JSON.stringify({ "UserUID": userEmail }), 
             headers: {
                 'Content-Type': 'application/json'
             }

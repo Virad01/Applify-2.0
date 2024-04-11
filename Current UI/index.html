@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <link rel="stylesheet"  href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -28,8 +28,8 @@
 
   <main>
     <h1 style="text-align: center;">My Applications</h1>
-    <div class="app-table">
-      <table style="margin: 0 auto;" class="Table">
+    <div class="table-responsive">
+      <table class="table table-bordered">
         <thead>
           <tr>
             <th>Company Name</th>
@@ -38,13 +38,13 @@
             <th>Status</th>
           </tr>
         </thead>
-        <!-- <tbody id = "tbody1"></tbody> -->
-        <tbody id = 'postmanResults'></tbody>
+        <tbody id = "tbody1"></tbody>
+        <!-- <tbody id = 'postmanResults'></tbody> -->
       </table>
     </div>
 
-    <script src = 'PsTable.js'></script>
-    <!-- <script type= "module" src = "appTable.js"></script> -->
+    <!-- <script src = 'PsTable.js'></script> -->
+    <script type= "module" src = "appTable.js"></script>
   </main>
 
   <div class="home-container">
