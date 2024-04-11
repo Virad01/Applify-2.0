@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("sendButton").addEventListener("click", async function() {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-      const tabUrl = { link: tab.url, uid:"vinayakrdikshit@gmail.com"};
+      const tabUrl = { link: tab.url, uid:"virad@gmail.com"};
       const data = await fetchData(tabUrl);
       console.log(data);
       
