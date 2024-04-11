@@ -143,24 +143,29 @@ h1 {
   padding: 10px 20px;
   font-family:DIN-Next;
   cursor: pointer;
+  position: relative;
   border-radius: 5px;
- margin-left: -3%;
-  margin-top: 30px;
+  left:10px;
+  top:60px;
+  font-family:DIN-Next;
+  
   
   
   
 }
 
 #redirectButton {
-  background-color: #007BFF; /* Blue background color */
-  color: #ffffff; /* White text color */
+  background-color: #007BFF; 
+  color: #ffffff; 
   border: none;
   padding: 12px 15px;
   font-family:DIN-Next;
   cursor: pointer;
   position: relative;
   border-radius: 5px;
-  margin-left: 18%;
+  right: 10px;
+  margin-top: -151px;
+  
 
  
   
