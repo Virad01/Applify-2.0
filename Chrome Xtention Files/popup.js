@@ -34,6 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
       return null;
     }
   }
-  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var myAppButton = document.getElementById('myApplicationsButton');
+    myAppButton.addEventListener('click', function() {
+      chrome.tabs.create({ url: '../Copyof Current UI/index.html' });
+    });
+  });
   
   

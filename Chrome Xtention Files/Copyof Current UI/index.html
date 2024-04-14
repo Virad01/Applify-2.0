@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet"  href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <h1>Applify</h1>
+        <!-- <p >Apply & Track</p> -->
+    </div>
+  </header>
+  <aside>
+    <nav>
+        <a href="#" id="app-btn">My Application</a>
+        <a href="#" id="summary-btn">Summary and Insights</a>
+        <a href="#" onclick="exportData()">Export</a>
+        <label for="fileInput" id="import-btn">Import</label>
+        <input type="file" id="fileInput" style="display: none;" onchange="importData()" accept=".csv" >
+        <a href="#" onclick="showTermsOfUse()">Terms of Use</a>
+    </nav>
+  </aside>
+
+  <div id="content"></div>
+
+  <script src="script.js"></script>
+
+  <main>
+    <h1 style="text-align: center;">My Applications</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Date</th>
+            <th>Job Title</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id = "tbody1"></tbody>
+        <!-- <tbody id = 'postmanResults'></tbody> -->
+      </table>
+    </div>
+
+    <!-- <script src = 'PsTable.js'></script> -->
+    <script type= "module" src = "appTable.js"></script>
+  </main>
+
+  <div class="home-container">
+    <div class="home-header"></div>
+    <div class="home-hero"></div>
+    <div class="home-features">
+      <div class="featuresContainer">
+        <div class="home-features1">
+          <div class="home-container01">
+            <span class="overline">
+              <span>features</span>
+              <br />
+            </span>
+            <h2 class="home-features-heading heading2">
+              Manage Your Job Applications with Ease
+            </h2>
+            <span class="home-features-sub-heading bodyLarge">
+              <span>
+                <span>
+                  <span>
+                    Discover the powerful features that make tracking and
+                    managing your job applications a breeze
+                  </span>
+                  <span></span>
+                </span>
+                <span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+              <span>
+                <span>
+                  <span></span>
+                  <span></span>
+                </span>
+                <span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+            </span>
+          </div>
+          <div class="home-container02">
+            <div class="featuresCard feature-card-feature-card">
+              <svg viewBox="0 0 1024 1024" class="featuresIcon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card-container">
+                <h3 class="feature-card-text heading3">
+                  <span>Simplified Application Tracking</span>
+                </h3>
+                <span class="bodySmall">
+                  <span>
+                    Effortlessly track your job applications in one place
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="featuresCard feature-card-feature-card">
+              <svg viewBox="0 0 1024 1024" class="featuresIcon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card-container">
+                <h3 class="feature-card-text heading3">
+                  <span>Detailed Application Information</span>
+                </h3>
+                <span class="bodySmall">
+                  <span>
+                    View all the necessary details of each application at a
+                    glance
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="featuresCard feature-card-feature-card">
+              <svg viewBox="0 0 1024 1024" class="featuresIcon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card-container">
+                <h3 class="feature-card-text heading3">
+                  <span>Easy Export and Import</span>
+                </h3>
+                <span class="bodySmall">
+                  <span>
+                    Easily export or import your application data for
+                    convenience
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="featuresCard feature-card-feature-card">
+              <svg viewBox="0 0 1024 1024" class="featuresIcon">
+                <path
+                  d="M809.003 291.328l-297.003 171.819-297.003-171.819 275.456-157.397c4.779-2.731 9.899-4.48 15.147-5.333 9.301-1.451 18.987 0.128 27.904 5.291zM491.776 979.669c6.016 3.243 12.928 5.077 20.224 5.077 7.381 0 14.336-1.877 20.395-5.163 15.189-2.475 29.909-7.68 43.392-15.36l298.709-170.709c26.368-15.232 45.269-38.315 55.424-64.597 5.675-14.592 8.619-30.165 8.747-46.251v-341.333c0-20.395-4.821-39.723-13.397-56.917-0.939-3.029-2.219-5.973-3.883-8.832-1.963-3.371-4.267-6.357-6.912-8.96-1.323-1.835-2.731-3.669-4.139-5.419-9.813-12.203-21.845-22.528-35.456-30.507l-299.051-170.88c-26.027-15.019-55.467-19.84-83.328-15.531-15.531 2.432-30.507 7.637-44.288 15.488l-298.709 170.709c-16.341 9.429-29.824 21.888-40.149 36.267-2.56 2.56-4.864 5.547-6.784 8.832-1.664 2.901-2.987 5.888-3.925 8.96-1.707 3.456-3.243 6.955-4.608 10.496-5.632 14.635-8.576 30.208-8.704 45.995v341.632c0.043 30.293 10.581 58.197 28.331 80.128 9.813 12.203 21.845 22.528 35.456 30.507l299.051 170.88c13.824 7.979 28.587 13.099 43.605 15.445zM469.333 537.045v340.949l-277.12-158.336c-4.736-2.773-8.832-6.315-12.16-10.411-5.931-7.381-9.387-16.512-9.387-26.581v-318.379zM554.667 877.995v-340.949l298.667-172.757v318.379c-0.043 5.163-1.067 10.496-2.987 15.445-3.413 8.789-9.6 16.384-18.176 21.333z"
+                ></path>
+              </svg>
+              <div class="feature-card-container">
+                <h3 class="feature-card-text heading3">
+                  <span>Insights and Summary</span>
+                </h3>
+                <span class="bodySmall">
+                  <span>
+                    Get valuable insights and summary of your job
+                    application history
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home-pricing">
+      <div class="pricingContainer">
+        <div class="home-container03">
+          <span class="overline">
+            <span>Pricing</span>
+            <br />
+          </span>
+          <h2 class="heading2">Choose the Right Plan for You</h2>
+          <span class="home-pricing-sub-heading bodyLarge">
+            <span>
+              <span>
+                Unlock the full potential of our platform with our flexible
+                pricing options
+              </span>
+            </span>
+          </span>
+        </div>
+        <div class="home-container04">
+          <div class="freePricingCard home-pricing-card">
+            <div class="home-container05">
+              <span class="home-text22 heading3">Free</span>
+              <span class="bodySmall">
+                A free plan with limited features
+              </span>
+            </div>
+            <div class="home-container06">
+              <span class="home-text23">
+                <span>&#8377</span>
+                <span></span>
+              </span>
+              <span class="home-free-plan-price">0</span>
+            </div>
+            <div class="home-container07">
+              <div class="home-container08">
+                <span class="home-text26">✔</span>
+                <span class="bodySmall">Access to basic job profiles</span>
+              </div>
+              <div class="home-container09">
+                <span class="home-text27">✔</span>
+                <span class="bodySmall">
+                  Limited number of applications
+                </span>
+              </div>
+              <div class="home-container10">
+                <span class="home-text28">✔</span>
+                <span class="bodySmall">
+                  Limited access to contact info
+                </span>
+              </div>
+              <div class="home-container11">
+                <span class="home-text29">✔</span>
+                <span class="bodySmall">No export/import data</span>
+              </div>
+            </div>
+            <button class="home-button buttonOutline">
+              Continue with Free
+            </button>
+          </div>
+          <div class="basicPricingCard home-pricing-card1">
+            <div class="home-container12">
+              <span class="home-text30 heading3">BASIC</span>
+              <span class="bodySmall">
+                A basic plan with additional features
+              </span>
+            </div>
+            <div class="home-container13">
+              <span class="home-text31">
+                <span>&#8377</span>
+                <span></span>
+              </span>
+              <span class="home-basic-plan-pricing">9.99</span>
+              <span class="home-text34">/ month</span>
+            </div>
+            <div class="home-container14">
+              <div class="home-container15">
+                <span class="home-text35">✔</span>
+                <span class="bodySmall">All features of FREE plan</span>
+              </div>
+              <div class="home-container16">
+                <span class="home-text37">✔</span>
+                <span class="bodySmall">
+                  Access to advanced job profiles
+                </span>
+              </div>
+              <div class="home-container17">
+                <span class="home-text38">✔</span>
+                <span class="bodySmall">
+                  Unlimited number of applications
+                </span>
+              </div>
+              <div class="home-container18">
+                <span class="home-text39">✔</span>
+                <span class="bodySmall">Full access to contact info</span>
+              </div>
+              <div class="home-container19">
+                <span class="home-text40">✔</span>
+                <span class="bodySmall">Export/import data</span>
+              </div>
+            </div>
+            <button class="home-button1 buttonFilledSecondary">
+              Try the Basic plan
+            </button>
+          </div>
+          <div class="proPricingCard home-pricing-card2">
+            <div class="home-container20">
+              <span class="home-text41 heading3">
+                <span>PRO</span>
+                <br />
+              </span>
+              <span class="bodySmall">
+                A premium plan with exclusive features
+              </span>
+            </div>
+            <div class="home-container21">
+              <span class="home-text44">
+                <span>&#8377</span>
+                <span></span>
+              </span>
+              <span class="home-pro-plan-pricing">19.99</span>
+              <span class="home-text47">/ month</span>
+            </div>
+            <div class="home-container22">
+              <div class="home-container23">
+                <span class="home-text48">✔</span>
+                <span class="bodySmall">
+                  &nbsp;All features of BASIC plan
+                </span>
+              </div>
+              <div class="home-container24">
+                <span class="home-text50">✔</span>
+                <span class="bodySmall">
+                  Access to premium job profiles
+                </span>
+              </div>
+              <div class="home-container25">
+                <span class="home-text51">✔</span>
+                <span class="bodySmall">Priority support</span>
+              </div>
+              <div class="home-container26">
+                <span class="home-text52">✔</span>
+                <span class="bodySmall">
+                  Advanced insights and analytics
+                </span>
+              </div>
+              <div class="home-container27">
+                <span class="home-text53">✔</span>
+                <span class="bodySmall">Enhanced export/import data</span>
+              </div>
+            </div>
+            <button class="home-button2 buttonFilledSecondary">
+              Try the PRO plan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home-banner">
+      <div class="bannerContainer home-banner1">
+        <h1 class="home-banner-heading heading2">
+          Track and Manage Your Job Applications
+        </h1>
+        <span class="home-banner-sub-heading bodySmall">
+          <span>
+            <span>
+              <span>
+                With our Job Application Tracker, you can easily keep track
+                of all your job applications in one place. Stay organized
+                and never miss an opportunity.
+              </span>
+              <span></span>
+            </span>
+            <span>
+              <span></span>
+              <span></span>
+            </span>
+          </span>
+          <span>
+            <span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>
+              <span></span>
+              <span></span>
+            </span>
+          </span>
+        </span>
+        <button class="buttonFilled">Learn More</button>
+      </div>
+    </div>
+    <div class="home-faq">
+      <div class="faqContainer">
+        <div class="home-faq1">
+          <div class="home-container28">
+            <span class="overline">
+              <span>FAQ</span>
+              <br />
+            </span>
+            <h2 class="home-text71 heading2">Common questions</h2>
+            <span class="home-text72 bodyLarge">
+              <span>
+                Here are some of the most common questions that we get.
+              </span>
+              <br />
+            </span>
+          </div>
+          <div class="home-container29">
+            
+            <div class="question1-container">
+              <span class="question1-text heading3">
+                <span>How can I check the status of my application?</span>
+              </span>
+              <span class="bodySmall">
+                <span>
+                  You can check the status of your application by referring
+                  to the 'Status' column on the landing page. It will
+                  indicate whether your application is pending, under
+                  review, or has been processed.
+                </span>
+              </span>
+            </div>
+            <div class="question1-container">
+              <span class="question1-text heading3">
+                <span>Can I import/export my application data?</span>
+              </span>
+              <span class="bodySmall">
+                <span>
+                  Yes, you can import/export your application data by using
+                  the 'Export/Import Data' feature in the sidebar. This
+                  allows you to backup or transfer your application
+                  information easily.
+                </span>
+              </span>
+            </div>
+            <div class="question1-container">
+              <span class="question1-text heading3">
+                <span>What are 'Summary Insights'?</span>
+              </span>
+              <span class="bodySmall">
+                <span>
+                  'Summary Insights' provide a summarized overview of your
+                  job applications. It includes statistics such as the
+                  number of applications submitted, the most common job
+                  profiles applied for, and other useful insights to help
+                  you track your progress.
+                </span>
+              </span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home-footer"></div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

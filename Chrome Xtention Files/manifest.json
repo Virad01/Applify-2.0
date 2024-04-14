@@ -6,8 +6,6 @@
   "permissions": ["activeTab", "scripting", "identity", "identity.email"],
    "background": {
       "script": "background.js"
-      
-    
     },
 
     "action": {
