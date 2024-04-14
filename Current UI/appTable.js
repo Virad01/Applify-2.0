@@ -2,7 +2,7 @@
 var tbody = document.getElementById('tbody1');
 
 function AddItemToTable(companyName, date, jobTitle, status){
-    let trow = document.createElement('trow');
+    let trow = document.createElement('tr');
     let td1 = document.createElement('td');
     let td2 = document.createElement('td');
     let td3 = document.createElement('td');
