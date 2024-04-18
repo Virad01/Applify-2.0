@@ -1,12 +1,16 @@
-
+var email
+chrome.identity.getProfileUserInfo({'accountStatus': 'ANY'}, function(info) {
+  email = info.email;
+  // console.log(typeof(email));
+  console.log(email);
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("sendButton").addEventListener("click", async function() {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-      const tabUrl = { link: tab.url, uid:"virad@gmail.com"};
+      const tabUrl = { link: tab.url, uid:email};
       const data = await fetchData(tabUrl);
       console.log(data);
-      
     });
   });
   
@@ -31,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
       return null;
     }
   }
-  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var myAppButton = document.getElementById('myApplicationsButton');
+    myAppButton.addEventListener('click', function() {
+      chrome.tabs.create({ url: '../Copyof Current UI/index.html' });
+    });
+  });
   
   

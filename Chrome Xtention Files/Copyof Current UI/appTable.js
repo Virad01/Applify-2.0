@@ -1,4 +1,15 @@
 // Table Creation
+var email
+chrome.identity.getProfileUserInfo({'accountStatus': 'ANY'},function(info) {
+    email=info.email
+    console.log(email);
+    if (email) {
+      RealTimeData();
+    } else {
+      console.error('Email is empty or undefined.');
+    }
+});
+
 var tbody = document.getElementById('tbody1');
 
 function AddItemToTable(companyName, date, jobTitle, status){
@@ -30,8 +41,8 @@ function AddAllItemsToTable(TheUser){
 
 //Imports and configuration
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -54,7 +65,7 @@ const analytics = getAnalytics(app);
 import{
     getFirestore, doc, setDoc, collection, getDocs, onSnapshot
 }
-from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+from 'firebase/firestore';
 
 const db = getFirestore();
 
@@ -65,7 +76,7 @@ const db = getFirestore();
 // });
 // Fetching all the data from the database
 async function GetAllData(){
-    const querySnapshot = await getDocs(collection(db, "vinayakrdikshit@gmail.com"));
+    const querySnapshot = await getDocs(collection(db, email));
     // const querySnapshot = await getDocs(collection(db, email))
     var user = [];
 
@@ -79,17 +90,18 @@ async function GetAllData(){
 // Fetching the data in realtime
 
 async function RealTimeData(){
-    const dbRef = collection(db, "vinayakrdikshit@gmail.com");
-    // const dbRef = collection(db, email);
-    onSnapshot(dbRef, (querySnapshot) => {
-        var user = [];
-
-        querySnapshot.forEach((doc) => {
+    try {
+        const dbRef = collection(db, email);
+        onSnapshot(dbRef, (querySnapshot) => {
+          var user = [];
+          querySnapshot.forEach((doc) => {
             user.push(doc.data());
+          });
+          AddAllItemsToTable(user);
         });
-        AddAllItemsToTable(user);
-    })
-
+      } catch (error) {
+        console.error('Error in RealTimeData:', error);
+      }
 }
 
-window.onload = RealTimeData();
+// window.onload = RealTimeData();
