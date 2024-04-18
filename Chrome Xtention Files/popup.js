@@ -1,7 +1,8 @@
 var email
 chrome.identity.getProfileUserInfo({'accountStatus': 'ANY'}, function(info) {
   email = info.email;
-  console.log(typeof(email));
+  // console.log(typeof(email));
+  console.log(email);
 });
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -14,7 +14,7 @@
   <aside>
     <nav>
         <a href="#" id="app-btn">My Application</a>
-        <a href="#" id="summary-btn">Summary and Insights</a>
+        <a href="summary.html" id="summary-btn">Summary and Insights</a>
         <a href="#" onclick="exportData()">Export</a>
         <label for="fileInput" id="import-btn">Import</label>
         <input type="file" id="fileInput" style="display: none;" onchange="importData()" accept=".csv" >
@@ -24,7 +24,7 @@
 
   <div id="content"></div>
 
-  <script src="script.js"></script>
+  <script type="module" src="main.js"></script>
 
   <main>
     <h1 style="text-align: center;">My Applications</h1>
@@ -44,10 +44,10 @@
     </div>
 
     <!-- <script src = 'PsTable.js'></script> -->
-    <script type= "module" src = "appTable.js"></script>
+    <script type= "module" src="main.js"></script>
   </main>
 
-  <div class="home-container">
+  <!-- <div class="home-container">
     <div class="home-header"></div>
     <div class="home-hero"></div>
     <div class="home-features">
@@ -417,7 +417,7 @@
       </div>
     </div>
     <div class="home-footer"></div>
-  </div>
+  </div> -->
 </div>
 </div>
 
