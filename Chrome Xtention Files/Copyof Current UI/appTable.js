@@ -12,31 +12,48 @@ chrome.identity.getProfileUserInfo({'accountStatus': 'ANY'},function(info) {
 
 var tbody = document.getElementById('tbody1');
 
-function AddItemToTable(companyName, date, jobTitle, status){
-    let trow = document.createElement('tr');
-    let td1 = document.createElement('td');
-    let td2 = document.createElement('td');
-    let td3 = document.createElement('td');
-    let td4 = document.createElement('td');
+function AddItemToTable(companyName, date, jobTitle, status, uid) {
+  let trow = document.createElement('tr');
+  let td1 = document.createElement('td');
+  let td2 = document.createElement('td');
+  let td3 = document.createElement('td');
+  let td4 = document.createElement('td');
+  let td5 = document.createElement('td'); //For Dropdown
 
-    td1.innerHTML = companyName;
-    td2.innerHTML = date;
-    td3.innerHTML = jobTitle;
-    td4.innerHTML = status;
+  td1.innerHTML = companyName;
+  td2.innerHTML = date;
+  td3.innerHTML = jobTitle;
+  td4.innerHTML = status;
 
-    trow.appendChild(td1);
-    trow.appendChild(td2);
-    trow.appendChild(td3);
-    trow.appendChild(td4);
+  // Create Dropdown
+  let dropdown = document.createElement('select');
+  dropdown.innerHTML = `
+      <option value="Open" ${status === 'Open'? 'selected' : ''}>Open</option>
+      <option value="Closed" ${status === 'Closed'? 'selected' : ''}>Closed</option>
+      <option value="Pending" ${status === 'Pending'? 'selected' : ''}>Pending</option>
+  `;
 
-    tbody.appendChild(trow); 
+  dropdown.addEventListener('change', function() {
+      const newStatus = this.value;
+      updateStatus(uid, newStatus, td4); // Pass uid and td4 to updateStatus function
+  });
+
+  td5.appendChild(dropdown);
+  trow.appendChild(td1);
+  trow.appendChild(td2);
+  trow.appendChild(td3);
+  trow.appendChild(td4);
+  trow.appendChild(td5);
+
+  return trow; 
 }
 
 function AddAllItemsToTable(TheUser){
-   tbody.innerHTML = '';
-   TheUser.forEach((element) => {
-       AddItemToTable(element.companyName, element.date, element.jobTitle, element.status);
-   });
+  tbody.innerHTML = '';
+  TheUser.forEach((element) => {
+      let row = AddItemToTable(element.companyName, element.date, element.jobTitle, element.status, element.uid);
+      tbody.appendChild(row);
+  });
 }
 
 //Imports and configuration
@@ -81,7 +98,7 @@ async function GetAllData(){
     var user = [];
 
     querySnapshot.forEach((doc) => {
-        user.push(doc.data());
+      user.push({ ...doc.data(), uid: doc.id }); // Include uid as id
     });
 
     AddAllItemsToTable(user);
@@ -95,13 +112,24 @@ async function RealTimeData(){
         onSnapshot(dbRef, (querySnapshot) => {
           var user = [];
           querySnapshot.forEach((doc) => {
-            user.push(doc.data());
+            user.push({ ...doc.data(), uid: doc.id }); // Include uid as id
           });
           AddAllItemsToTable(user);
         });
       } catch (error) {
         console.error('Error in RealTimeData:', error);
       }
+}
+
+async function updateStatus(uid, newStatus, statusCell, email) {
+  try {
+      const jobRef = doc(db, `${email}/${uid}`);
+      await setDoc(jobRef, { status: newStatus }, { merge: true });
+      statusCell.innerHTML = newStatus; // Update status in the same cell
+      console.log('Status updated successfully');
+  } catch (error) {
+      console.error('Error updating status:', error);
+  }
 }
 
 // window.onload = RealTimeData();
