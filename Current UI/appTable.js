@@ -16,11 +16,15 @@ function AddItemToTable(companyName, date, jobTitle, status, uid) {
 
     // Create Dropdown
     let dropdown = document.createElement('select');
-    dropdown.innerHTML = `
-        <option value="Open" ${status === 'Open'? 'selected' : ''}>Open</option>
-        <option value="Closed" ${status === 'Closed'? 'selected' : ''}>Closed</option>
-        <option value="Pending" ${status === 'Pending'? 'selected' : ''}>Pending</option>
-    `;
+  dropdown.innerHTML = `
+      <option value="Open" ${status === 'Open'? 'selected' : ''}>Open</option>
+      <option value="Closed" ${status === 'Closed'? 'selected' : ''}>Closed</option>
+      <option value="Pending" ${status === 'Pending'? 'selected' : ''}>Pending</option>
+      <option value="Resume Selected" ${status === 'Resume Selected'? 'selected' : ''}>Resume Selected</option>
+      <option value="Online Assessment Cleared" ${status === 'Online Assessment Cleared'? 'selected' : ''}>Online Assessment Cleared</option>
+      <option value="HR Round Cleared" ${status === 'HR Round Cleared'? 'selected' : ''}>HR Round Cleared</option>
+      <option value="Technical Round Cleared" ${status === 'Technical Round Cleared'? 'selected' : ''}>Technical Round Cleared</option>
+  `;
 
     dropdown.addEventListener('change', function() {
         const newStatus = this.value;
