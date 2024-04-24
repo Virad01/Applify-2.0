@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    var myAppButton = document.getElementById('myApplicationsButton');
+    var myAppButton = document.getElementById('redirectButton');
     myAppButton.addEventListener('click', function() {
       chrome.tabs.create({ url: '../Copyof Current UI/index.html' });
     });
