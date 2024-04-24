@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Firestore Data</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgb(0, 96, 185);
+        }
+
+        .center-box {
+            background-color: rgba(255, 255, 255, 0.6); /* Adjust the alpha value here */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-box">
+        <h1> Spread Joy With Jobs  </h1>
+        <form action="/Jobs" method="get">
+            <button type="submit">Export the Jobs</button>
+        </form>
+    </div>
+    <footer>Made with ❤️ by Applify</footer>
+</body>
+
+</html>
