@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload CSV </title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: rgb(0, 96, 185);
+    }
+
+    .center-box {
+            background-color: rgba(255, 255, 255, 0.6); 
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    input[type="file"] {
+      display: none; /* Hide the default file input */
+    }
+
+    .custom-file-upload, .custom-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .custom-file-upload:hover, .custom-button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    position: fixed; 
+    bottom: 0;
+    /* font-weight: 100px; */
+}
+  </style>
+</head>
+<body>
+  <div class="center-box">
+    <h1>Hey ! Please Upload the Job File</h1>
+    <form id="uploadForm" enctype="multipart/form-data" action="/upload" method="post">
+      <label for="csv" class="custom-file-upload">Select CSV File</label>
+      <input type="file" id="csv" name="csv" accept=".csv" required><br><br>
+      <button type="submit" class="custom-button">Upload</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#uploadForm').submit(function(event) {
+                event.preventDefault();
+                
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: $(this).attr('method'),
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        $('#successMessage').fadeIn(1000, function() {
+                            $(this).fadeOut(1000);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <footer>Made with ❤️ by Applify</footer>
+</body>
+</html>
