@@ -14,7 +14,8 @@
   <aside>
     <nav>
         <a href="#" id="app-btn">My Application</a>
-        <a href="#" id="summary-btn">Summary and Insights</a>
+        <!-- <a href="#" id="summary-btn">Summary and Insights</a> -->
+        <a href="summary.html?statusCounts=<%= encodeURIComponent(JSON.stringify(statusCounts)) %>" id="summary-btn">Summary and Insights</a>
         <a href="#" onclick="exportData()">Export</a>
         <label for="fileInput" id="import-btn">Import</label>
         <input type="file" id="fileInput" style="display: none;" onchange="importData()" accept=".csv" >
@@ -36,6 +37,7 @@
             <th>Date</th>
             <th>Job Title</th>
             <th>Status</th>
+            <th>Change Status</th>
           </tr>
         </thead>
         <tbody id = "tbody1"></tbody>

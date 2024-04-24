@@ -41,13 +41,51 @@ function AddItemToTable(companyName, date, jobTitle, status, uid) {
     return trow; 
 }
 
+// function AddAllItemsToTable(TheUser){
+//     tbody.innerHTML = '';
+//     TheUser.forEach((element) => {
+//         let row = AddItemToTable(element.companyName, element.date, element.jobTitle, element.status, element.uid);
+//         tbody.appendChild(row);
+//     });
+// }
+
 function AddAllItemsToTable(TheUser){
     tbody.innerHTML = '';
+    const statusCounts = {
+        Open: 0,
+        Closed: 0,
+        Pending: 0,
+        "Resume Selected": 0,
+        "Online Assessment Cleared": 0,
+        "HR Round Cleared": 0,
+        "Technical Round Cleared": 0,
+    };
+
     TheUser.forEach((element) => {
         let row = AddItemToTable(element.companyName, element.date, element.jobTitle, element.status, element.uid);
         tbody.appendChild(row);
+
+        // Increment the count for the corresponding status value
+        if (statusCounts[element.status]) {
+            statusCounts[element.status]++;
+        } else {
+            statusCounts[element.status] = 1;
+        }
     });
- }
+
+    // Log the status counts to the console
+    // console.log(statusCounts);
+    // console.log('Total number of applications:', tbody.rows.length);
+
+    // Store the status counts in the local storage
+    localStorage.setItem('statusCounts', JSON.stringify(statusCounts));
+
+    // Open the summary page
+    // window.open('summary.html');
+
+    // Store the status counts in the local storage
+    localStorage.setItem('statusCounts', JSON.stringify(statusCounts));
+}
 
 //Imports and configuration
 
