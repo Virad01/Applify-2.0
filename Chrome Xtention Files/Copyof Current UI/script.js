@@ -23,14 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //  "Export" button
-  const exportBtns = document.querySelectorAll("nav a:last-child");
+  const exportBtns = document.querySelectorAll("#exportbtn");
 
   // Attach a click event listener to the "Export" button
-  exportBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      exportData();
-    });
+  exportBtns.addEventListener("click", () => {
+    exportData();
   });
+});
 
   // Select the "Import" button
   const importBtn = document.querySelector("#import-btn");
@@ -41,13 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Select the "Terms of Use" button
-  const TermsBtn = document.querySelector("#terms-btn");
+  const TermsBtn = document.querySelector("#termbtn");
 
   // Attach a click event listener to the "Import" button
-  importBtn.addEventListener("click", () => {
+  TermsBtn.addEventListener("click", () => {
     showTermsOfUse();
   });
-});
+
 
 function initializeChart() {
   var xValues = ["Applcation Filled", "Resume Shorlisted", "OA Cleared", "Shortlisted for HR round"];
