@@ -17,7 +17,7 @@ function AddItemToTable(companyName, date, jobTitle, status, uid) {
     // Create Dropdown
     let dropdown = document.createElement('select');
   dropdown.innerHTML = `
-      <option value="open" ${status === 'open'? 'selected' : ''}>open</option>
+      <option value="Open" ${status === 'Open'? 'selected' : ''}>Open</option>
       <option value="Closed" ${status === 'Closed'? 'selected' : ''}>Closed</option>
       <option value="Pending" ${status === 'Pending'? 'selected' : ''}>Pending</option>
       <option value="Resume Selected" ${status === 'Resume Selected'? 'selected' : ''}>Resume Selected</option>
@@ -52,7 +52,7 @@ function AddItemToTable(companyName, date, jobTitle, status, uid) {
 function AddAllItemsToTable(TheUser){
     tbody.innerHTML = '';
     const statusCounts = {
-        open: 0,
+        Open: 0,
         Closed: 0,
         Pending: 0,
         "Resume Selected": 0,
