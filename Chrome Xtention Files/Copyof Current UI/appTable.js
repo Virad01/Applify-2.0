@@ -25,7 +25,7 @@ function AddItemToTable(companyName, date, jobTitle, status, uid) {
   td3.innerHTML = jobTitle;
   td4.innerHTML = status;
 
-  // Create Dropdown
+  // chnage function 
   let dropdown = document.createElement('select');
   dropdown.innerHTML = `
       <option value="Open" ${status === 'Open'? 'selected' : ''}>Open</option>
@@ -52,6 +52,7 @@ function AddItemToTable(companyName, date, jobTitle, status, uid) {
   return trow; 
 }
 
+// change function
 function AddAllItemsToTable(TheUser){
   tbody.innerHTML = '';
     const statusCounts = {
@@ -145,6 +146,7 @@ async function RealTimeData(){
       }
 }
 
+//change function 
 async function updateStatus(uid, newStatus, statusCell, email) {
   try {
       const jobRef = doc(db, `${email}/${uid}`);
