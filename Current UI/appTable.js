@@ -89,13 +89,16 @@ function AddAllItemsToTable(TheUser){
 
 //Imports and configuration
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+
 const firebaseConfig = {
   apiKey: "AIzaSyD_OG0ZWhO9r8Cv9Csm5QH700kCjGe5MWQ",
   authDomain: "applify-9f7a9.firebaseapp.com",
@@ -113,8 +116,8 @@ const analytics = getAnalytics(app);
 import{
     getFirestore, doc, setDoc, collection, getDocs, onSnapshot
 }
-from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
-
+// from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+from 'firebase/firestore';
 const db = getFirestore();
 
 // var email
